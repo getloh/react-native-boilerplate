@@ -15,6 +15,7 @@ import { ThemeType } from './src/ui/themes/ThemeType';
 import { AppScreen } from './src/ui/constants/AppScreen';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Router from './src/routing/Router';
+import Toast from 'react-native-toast-message'
 
 
 function App(): JSX.Element
@@ -32,6 +33,7 @@ function App(): JSX.Element
     <SafeAreaProvider>
 
       <Router />
+    <Toast />
     </SafeAreaProvider>
   );
 }

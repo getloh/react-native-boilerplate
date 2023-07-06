@@ -4,26 +4,27 @@ import { SplashScreen } from "../ui/screens/SplashScreen";
 import { AppScreen } from "../ui/constants/AppScreen";
 import { screenOptions } from "./Router";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { HomeNavigator } from "./HomeNavigator";
-// import { templateScreen } from "../ui/screens/templateScreen";
-// import { templateScreen2 } from "../ui/screens/templateScreen2";
+import { TemplateScreen } from "../ui/screens/templateScreen";
+import { TemplateScreen2 } from "../ui/screens/templateScreen2";
 
-const PrivateNavStack = createNativeStackNavigator();
+const HomeStack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-export function PrivateNavigator()
+export function HomeNavigator()
 {
 
 
     return (
         <>
-            <StatusBar />
+        <HomeStack.Navigator screenOptions={screenOptions}>
+            <HomeStack.Screen name={AppScreen.Home} component={TemplateScreen}/>
+            <HomeStack.Screen name={AppScreen.Settings} component={TemplateScreen2}/>
+
+        </HomeStack.Navigator>
             {/* <PrivateNavStack.Navigator screenOptions={screenOptions}> */}
                 {/* <PrivateNavStack.Screen name={AppScreen.Splash} component={SplashScreen} /> */}
-                <Tab.Navigator>
-                    <Tab.Screen name={AppScreen.HomeTab} component={HomeNavigator} />
-                    <Tab.Screen name={AppScreen.Settings} component={SplashScreen} />
-                </Tab.Navigator>
+                    {/* <Tab.Screen name={AppScreen.Home} component={templateScreen} />
+                    <Tab.Screen name={AppScreen.Settings} component={templateScreen2} /> */}
             {/* </PrivateNavStack.Navigator> */}
         </>
     )

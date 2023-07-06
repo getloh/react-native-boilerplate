@@ -1,6 +1,8 @@
 export enum AppScreen {
     Splash = "Splash",
     Login = "Login",
-    Home = "Home",
     Settings = "Settings",
+    HomeTab = "HomeTab",
+    Home = "Home",
+    
 }
